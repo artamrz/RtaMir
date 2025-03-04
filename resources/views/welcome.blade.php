@@ -9,7 +9,7 @@
    <div class="row">
      <div class="col-md-4 ">
          <img src="{{ asset('img/RD.jpg')}}" class="mx-auto d-block rounded-circle border-3 m-3" width="140" height="140" alt=""/>
-         <h3 class="fw-normal text-center">Context-Aware </h3>
+         <h3 class="fw-normal text-center">Context-Aware khar </h3>
          <p class="service text-center p-3">A responsive layout is no longer sufficient; dynamic adaptation of content and layout based on location, context, and connection speed must be prioritized.</p>
      </div>
      <div class="col-md-4 shadow rounded px-2">
