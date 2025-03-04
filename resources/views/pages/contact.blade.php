@@ -3,8 +3,13 @@
     @section('title','Contact')
     @section('content')
        <div class="row">
-
-            <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="col-md-5 p-5 mb-4 m-2 bg-light rounded-3 offest-1">
+                <h1><span class="badge bg-dark w-100 mb-3">Let's Connect</span></h1>
+                <p class="fs-5">You can connect me by filling the form</p>
+                <p class="fs-5">I am also pretty active on Linkedin and other social platforms the links are below</p>
+                <p class="fs-5">Also if you are a developer, you can reach me on Github too.</p>
+            </div>
+            <div class="col-md-6 p-5 mb-4 m-2 bg-light rounded-3">
                 <h1>Contact Me</h1>
                 <hr>
                   <div class="form-group">
