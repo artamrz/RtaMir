@@ -3,43 +3,41 @@ name: Laravel Deployment
 on:
   push:
     branches:
-      - main  # my project branch
+      - main # my project branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Set Up SSH Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-actions
-        chmod 600 ~/.ssh/github-actions
-        ssh-keyscan -p 65002 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Set Up SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-actions
+          chmod 600 ~/.ssh/github-actions
+          ssh-keyscan -p 65002 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Deploy to Server
-      run: |
-        ssh -i ~/.ssh/github-actions -p 65002 "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}"  << 'EOF'
-          cd ~/domains/rtamir.com
-          git reset --hard HEAD
-          git clean -fd
-          git pull origin main
-          php composer.phar install --no-dev --optimize-autoloader
-          rm -rf ~/domains/rtamir.com/public_html
-          ln -s ~/domains/rtamir.com/public ~/domains/rtamir.com/public_html
-          php artisan key:generate --ansi
-          php artisan migrate --force
-          php artisan cache:clear
-          php artisan config:clear
-          php artisan config:cache
-          php artisan route:cache
-          php artisan queue:restart
-          chown -R u772497795 ~/domains/rtamir.com
-          chmod -R 775 ~/domains/rtamir.com/storage ~/domains/rtamir.com/bootstrap/cache
+      - name: Deploy to Server
+        run: |
+          ssh -i ~/.ssh/github-actions -p 65002 "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}"  << 'EOF'
+            cd ~/domains/rtamir.com
+            git reset --hard HEAD
+            git clean -fd
+            git pull origin main
+            php composer.phar install --no-dev --optimize-autoloader
+            rm -rf ~/domains/rtamir.com/public_html
+            ln -s ~/domains/rtamir.com/public ~/domains/rtamir.com/public_html
+            php artisan key:generate --ansi
+            php artisan migrate --force
+            php artisan cache:clear
+            php artisan config:clear
+            php artisan config:cache
+            php artisan route:cache
+            php artisan queue:restart
+            chown -R u772497795 ~/domains/rtamir.com
+            chmod -R 775 ~/domains/rtamir.com/storage ~/domains/rtamir.com/bootstrap/cache
 
-        EOF
-
-
+          EOF
