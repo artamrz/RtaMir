@@ -14,7 +14,7 @@
      </div>
      <div class="col-md-4 shadow rounded px-2">
        <img src="{{ asset('img/SEO.jpg')}}" class="mx-auto d-block rounded-circle m-3 border-3" width="140" height="140" alt=""/>
-       <h3 class="fw-normal text-center">SEO Optimization </h3>
+       <h3 class="fw-normal text-center">SEO Optimization fff </h3>
        <p class="service text-center p-3">Implements strategies to improve rankings on search engines and AI-driven resources, boosting organic traffic and visibility.</p>
      </div>
      <div class="col-md-4">
