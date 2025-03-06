@@ -1,6 +1,3 @@
-.btn-top-margin-10 {
-    margin-top: 10px;
-}
 html,
 body {
     margin: 0;
@@ -8,9 +5,14 @@ body {
     height: 100%; /* Ensures full height for correct layout calculations */
 }
 body {
+    background: var(--body-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensures body takes up full viewport height */
+    color: rgb(226, 219, 210);
+}
+:root {
+    --body-bg: #212529;
 }
 
 footer {
@@ -30,14 +32,98 @@ html {
     font-weight: 800;
     background-color: #fb5f09;
     border-color: #fb5e0a;
-    transition: 0.4s;
+    transition: 0.8s;
 }
 .btn-orange:hover {
     background-color: black;
     border-color: #000000;
     color: #fb5f09;
 }
-
+.btn-purple {
+    color: #f9ecec;
+    font-weight: 800;
+    background-color: #390d46;
+    border-color: #390d46 4px solid;
+    transition: 0.8s;
+}
+.btn-purple:hover {
+    background-color: #00000000;
+    border-color: #000000;
+    border: #000000 4px solid;
+    color: #000;
+}
+.btn-top-margin-10 {
+    margin-top: 10px;
+}
+.angled-background-orange-5 {
+    --skew-angle: -3deg;
+    --skew-angle-8: -5deg;
+    --background: /*linear-gradient(
+        45deg, 
+        #12c2e9, 
+        #c471ed, 
+        #f64f59);*/ #fb5f09cc;
+    position: relative;
+    color: #212529;
+    isolation: isolate;
+}
+.angled-background-orange-5::after {
+    content: "";
+    background: var(--background);
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: skewY(var(--skew-angle));
+}
+.angled-background-orange-5::before {
+    content: "";
+    background: var(--background);
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: skewY(var(--skew-angle-8));
+}
+.spikes {
+    --spike-width: 50px;
+    --spike-height: 40px;
+    --spike-color: var(--body-bg);
+    position: relative;
+    background-color: #e5e7da;
+    color: hsl(48, 12%, 92%);
+}
+.spikes::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--spike-height);
+    background: var(--spike-color);
+    z-index: 1;
+    -webkit-mask-image: url("../img/triangle.svg");
+    /* -webkit-mask-repeat: repeat-x; */
+    mask-image: url("../img/triangle.svg");
+    /* mask-repeat: repeat-x; */
+}
+.footer-spike {
+    --spike-width: 50px;
+    --spike-height: 40px;
+    --spike-color: var(--body-bg);
+    background-color: var(--body-bg);
+    position: relative;
+}
+.footer-spike::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--spike-height);
+    background: var(--spike-color);
+    z-index: 10;
+    -webkit-mask-image: url("../img/triangle.svg");
+    /* -webkit-mask-repeat: repeat-x; */
+    mask-image: url("../img/triangle.svg");
+    /* mask-repeat: repeat-x; */
+    transform: rotate(0.5turn);
+    top: -40px;
+}
 .carousel-box #CarouselBox {
     grid-row: 1 / 2;
     grid-column: 1 / 8;

@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark">
+<div class="container-fluid footer-spike">
     <footer class="text-center py-5">
         <div class="row justify-content-center">
             <!-- Logo Section -->

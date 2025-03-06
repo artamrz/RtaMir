@@ -24,28 +24,28 @@
      </div>
    </div>
  </div>
-<div class="container-fluid bg-purple d-flex py-3 justify-content-center">
+<div class="container-fluid py-4 angled-background-orange-5 d-flex py-3 justify-content-center">
     <div class="row w-100 justify-content-center align-items-center">
         <!-- Left Column: Text Content -->
         <div class="col-12 col-sm-4 text-center mb-3 mb-sm-0">
-            <h3 class="text-light">No Need To Subscribe</h3>
-            <p class="text-light">Newsletters are outdated. Let's engage in more interactive ways.</p>
-            <a href="/contact" class="btn btn-orange" style="width: 100%;">I Want To Know More</a>
+            <h3>No Need To Subscribe</h3>
+            <p>Newsletters are outdated. Let's engage in more interactive ways.</p>
+            <a href="/contact" class="btn btn-purple" style="width: 100%;">I Want To Know More</a>
         </div>
     </div>
 </div>
-
- <div class="container">
-    <div class="p-5 mb-4 bg-light rounded-3">
-              <div class="container-fluid py-5">
-                @foreach($posts as $post)
-                  <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
-                  <p class="col-md-8 fs-4">{{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
-                  <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-dark">Read More</a>
-                  <hr>
-                @endforeach  
-              </div>
-    </div>   
+</div>
+ <div class="container-fluid spikes mt-5">
+    <div class="row w-100 justify-content-center align-items-center" style="height: 200px;">
+    Whether you require distribution or fulfillment, defined freight forwarding, or a complete supply chain solution, we are here for you.
+      @foreach($posts as $post)
+          <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
+            <p class="col-md-8 fs-4">{{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
+            <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-dark">Read More</a>
+            <hr>
+        @endforeach  
+    </div>
+      
 </div>
 @endsection
 
