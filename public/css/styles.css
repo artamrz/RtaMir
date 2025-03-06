@@ -88,7 +88,7 @@ html {
     --spike-height: 40px;
     --spike-color: var(--body-bg);
     position: relative;
-    background-color: #e5e7da;
+    background-color: #e7e4da;
     color: hsl(48, 12%, 92%);
 }
 .spikes::before {

@@ -36,8 +36,8 @@
 </div>
 </div>
  <div class="container-fluid spikes mt-5">
-    <div class="row w-100 justify-content-center align-items-center" style="height: 200px;">
-        <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="row w-100 justify-content-center text-dark align-items-center">
+        <div class="p-5 mb-4 rounded-3">
           <div class="container-fluid py-5">
               @foreach($posts as $post)
                   <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
