@@ -24,13 +24,13 @@
      </div>
    </div>
  </div>
-<div class="container-fluid bg-dark d-flex py-3 justify-content-center">
+<div class="container-fluid bg-purple d-flex py-3 justify-content-center">
     <div class="row w-100 justify-content-center align-items-center">
         <!-- Left Column: Text Content -->
         <div class="col-12 col-sm-4 text-center mb-3 mb-sm-0">
             <h3 class="text-light">No Need To Subscribe</h3>
             <p class="text-light">Newsletters are outdated. Let's engage in more interactive ways.</p>
-            <a href="/contact" class="btn btn-light" style="width: 100%;">I Want To Know More</a>
+            <a href="/contact" class="btn btn-orange" style="width: 100%;">I Want To Know More</a>
         </div>
     </div>
 </div>

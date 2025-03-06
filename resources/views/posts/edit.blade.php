@@ -8,7 +8,7 @@
             
                 <h1 class="display-5 fw-bold">Edit Your Post</h1>
                 <hr>
-                    <form action="{{ route('posts.update', $post->id) }}" method="POST" data-parsley-validate>
+                    <form action="{{ route('posts.update', $post->id) }}" method="POST"enctype="multipart/form-data" data-parsley-validate>
                         @csrf
                         @method('PUT')
                          <label for="title">Title:</label>
@@ -16,7 +16,9 @@
 
                          <label for="slug">URL Slug:</label>
                          <input type="text" name="slug" id="slug" class="form-control" maxlength="255" minlength="5" value="{{ $post->slug }}" required>
-
+                          
+                         <label for="post_img">Photo:</label>
+                         <input type="file" name="post_img" class="form-control">
                         <label for="body">Post Content</label>
                         <textarea name="body" id="ckeditor" class="form-control">{{ $post->body }}</textarea>
 

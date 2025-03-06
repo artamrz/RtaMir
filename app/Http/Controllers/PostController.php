@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Session;
 use Purifier;
+use Image;
+use Storage;
 
 class PostController extends Controller
 {
@@ -35,6 +37,7 @@ class PostController extends Controller
 
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts,slug|alpha_dash|min:5|max:255',
+            'post_img' => 'sometimes|image',
             'body' => 'required|'
 
         ]);
@@ -43,6 +46,15 @@ class PostController extends Controller
         $post-> title = $request->title;
         $post->slug = $request->slug;
         $post->body = Purifier::clean($request->body);
+
+        if ($request->hasFile('post_img')){
+            $image = $request->file('post_img');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('img/post_img' . $filename);
+            Image::make($image)->resize(800,400)->save($location);
+
+            $post->image = $filename;
+        }
         $post -> save();
 
         Session::flash('success', "Yoooohoooooo....! The Rlog post was successfuly saved Arta!");
@@ -77,6 +89,7 @@ class PostController extends Controller
 
             'title' => 'required|max:255',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug,'.$id,
+            'post_img' => 'sometimes|image',
             'body' =>  'required'          
         ]);
 
@@ -84,6 +97,17 @@ class PostController extends Controller
         $post->title = $request -> input('title');
         $post->slug = $request -> input('slug');
         $post->body = Purifier::clean($request -> input('body'));
+
+        if ($request->hasFile('post_img')){
+
+            $image = $request->file('post_img');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('img/post_img' . $filename);
+            Image::make($image)->resize(800,400)->save($location);
+            $oldFilename = $post->image;
+            $post->image = $filename;
+            Storage::delete($oldFilename);
+        }
         $post->save();
 
         Session::flash('success',' The Rlog post was successfully updated, see you later!');

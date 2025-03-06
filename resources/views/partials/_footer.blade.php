@@ -4,7 +4,7 @@
             <!-- Logo Section -->
             <div class="col-md-3 mb-3">
                 <a href="/" class="d-flex justify-content-center mt-3 mb-3 text-decoration-none">
-                    <img src="{{ asset('img/Rtamir-logo-tps0-200px.png') }}" alt="RtaMirLogo" width="207" height="170">
+                    <img src="{{ asset('img/rtamir-logo-white.png') }}" alt="RtaMirLogo" width="220s" height="150">
                 </a>
             </div>
             

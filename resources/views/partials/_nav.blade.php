@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" aria-label="Fourth navbar example">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{{ asset('img/Rtamir-logo-tps0-200px.png') }}" alt="RtaMirLogo" width="107" height="70"></a>
+      <a class="navbar-brand" href="/"><img src="{{ asset('img/rtamir-logo-white.png') }}" alt="RtaMirLogo" width="120" height="70"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -22,6 +22,21 @@ html {
 .border-3 {
     border: 3px solid;
 }
+.bg-purple {
+    background-color: #390d46;
+}
+.btn-orange {
+    color: #f9ecec;
+    font-weight: 800;
+    background-color: #fb5f09;
+    border-color: #fb5e0a;
+    transition: 0.4s;
+}
+.btn-orange:hover {
+    background-color: black;
+    border-color: #000000;
+    color: #fb5f09;
+}
 
 .carousel-box #CarouselBox {
     grid-row: 1 / 2;
