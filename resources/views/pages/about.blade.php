@@ -1,8 +1,8 @@
     @extends('main')
     @section('title','About RtaMir')
     @section('content')
-       <div class="row">
-            <div class="p-5 mb-4 bg-light rounded-3">
+       <div class="row bg-dark">
+            <div class="p-5 mb-4 rounded-3">
                   <div class="container-fluid py-5">
                     <h1 class="display-5 fw-bold">About Rtamir</h1>
                     <p class="col-md-12 fs-4">At Rtamir, web application design is at the heart of everything. The focus is on creating stunning, high-performance digital experiences that are intuitive, responsive, and built for the modern web. Every project is designed with users in mind, ensuring seamless interaction across all devices.

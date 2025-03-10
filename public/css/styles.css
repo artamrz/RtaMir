@@ -101,7 +101,8 @@ html {
     -webkit-mask-image: url("../img/triangle.svg");
     /* -webkit-mask-repeat: repeat-x; */
     mask-image: url("../img/triangle.svg");
-    /* mask-repeat: repeat-x; */
+
+    filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.2));
 }
 .footer-spike {
     --spike-width: 50px;
