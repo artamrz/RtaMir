@@ -27,6 +27,9 @@ html {
 .bg-purple {
     background-color: #390d46;
 }
+.bg-sandy {
+    background-color: #e7e4da;
+}
 .btn-orange {
     color: #f9ecec;
     font-weight: 800;
@@ -83,9 +86,7 @@ html {
     inset: 0;
     transform: skewY(var(--skew-angle-8));
 }
-.bg-sandy {
-    background-color: #e7e4da;
-}
+
 .spikes {
     --spike-width: 50px;
     --spike-height: 40px;
