@@ -5,7 +5,7 @@
  @section('content')   
 
 <div class="row bg-dark">
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 shodow border border-light border-2 rounded-3">
               <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">welcome to my Rlog!</h1>
                 <p class="col-md-8 fs-4">This is my first blog using Laravel version 8. Hope you find it intresting! please check my most popular posts!</p>
