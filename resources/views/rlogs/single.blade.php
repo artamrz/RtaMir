@@ -7,7 +7,9 @@
 
 		<div class="row d-flex justify-content-center text-dark bg-sandy">
 			<div class="col-md-8">
-				<img src="{{asset('img/post_img'.$post->post_img)}}" class="mx-auto d-block m-3" width="800" height="400" alt=""/>
+			@if($post->image)
+   				 <img src="{{ url('img/post_img/' . $post->image) }}" class="mx-auto d-block m-3" width="800" height="400" alt="Post Image"/>
+			@endif
 				<h1>{{$post->title}}</h1>
 				<p>{!!$post->body!!}</p>
 			</div>		

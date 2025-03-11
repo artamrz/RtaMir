@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Session;
-use Purifier;
-use Image;
+use Mews\Purifier\Facades\Purifier;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use Storage;
 
 class PostController extends Controller
@@ -37,7 +38,7 @@ class PostController extends Controller
 
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts,slug|alpha_dash|min:5|max:255',
-            'post_img' => 'sometimes|image',
+            'image' => 'sometimes|image',
             'body' => 'required|'
 
         ]);
@@ -47,11 +48,14 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->body = Purifier::clean($request->body);
 
-        if ($request->hasFile('post_img')){
-            $image = $request->file('post_img');
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('img/post_img' . $filename);
-            Image::make($image)->resize(800,400)->save($location);
+            $imageManager = new ImageManager(new Driver());
+            $processedImage = $imageManager->read($image)->cover(800, 400);
+            $processedImage->save($location);
+
 
             $post->image = $filename;
         }
@@ -89,7 +93,7 @@ class PostController extends Controller
 
             'title' => 'required|max:255',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug,'.$id,
-            'post_img' => 'sometimes|image',
+            'image' => 'sometimes|image',
             'body' =>  'required'          
         ]);
 
@@ -98,12 +102,16 @@ class PostController extends Controller
         $post->slug = $request -> input('slug');
         $post->body = Purifier::clean($request -> input('body'));
 
-        if ($request->hasFile('post_img')){
+        if ($request->hasFile('image')){
 
-            $image = $request->file('post_img');
+            $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('img/post_img' . $filename);
-            Image::make($image)->resize(800,400)->save($location);
+
+            $imageManager = new ImageManager(new Driver());
+            $processedImage = $imageManager->read($image)->cover(800, 400);
+            $processedImage->save($location);
+
             $oldFilename = $post->image;
             $post->image = $filename;
             Storage::delete($oldFilename);

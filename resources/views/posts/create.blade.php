@@ -16,8 +16,9 @@
                             <label for="slug">URL Slug:</label>
                             <input type="text" name="slug" id="slug" class="form-control" maxlength="255" minlength="5" required>
 
-                            <label for="post_img">Photo:</label>
-                            <input type="file" name="post_img" class="form-control">
+                            <label for="image">Photo:</label>
+                            <input type="file" name="image" class="form-control">
+
 
                             <label for="body">Post Content</label>
                             <textarea id="ckeditor" name="body" class="form-control" rows="5"></textarea><br>
