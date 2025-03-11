@@ -14,13 +14,13 @@
         </div>
     </div>
 
-    <div class="row bg-sandy text-dark align-items-md-stretch"> 
-        <div class="col-md-6">
+    <div class="row align-items-md-stretch"> 
+        <div class="col-md-6 bg-sandy text-dark p-4 rounded-3">
            @foreach($posts as $post)
                 <div class="">
                     <h2>{{ $post->title }}</h2>
                     <p> {{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
-                    <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-orange px-5 btn-large">Read More</a>
+                    <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-orange w-100">Read More</a>
                 </div>
            @endforeach 
         </div>
