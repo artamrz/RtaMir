@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<div class="container-fluid text-dark bg-sandy p-4 m-5">
+	<div class="container-fluid text-dark bg-sandy p-4 m-5" style="background-color: #e7e4da;">
 			<div class="row">
 				<div class="col-md-8">
 					<h1>All Posts</h1>
