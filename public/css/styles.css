@@ -83,6 +83,9 @@ html {
     inset: 0;
     transform: skewY(var(--skew-angle-8));
 }
+.bg-sandy {
+    background-color: #e7e4da;
+}
 .spikes {
     --spike-width: 50px;
     --spike-height: 40px;
