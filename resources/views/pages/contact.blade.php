@@ -42,6 +42,7 @@
 
     @section('scripts')
     <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
