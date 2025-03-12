@@ -43,15 +43,5 @@
     @section('scripts')
     <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            grecaptcha.ready(function () {
-                grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", { action: "contact" }).then(function (token) {
-                    document.getElementById("recaptcha_token").value = token;
-                });
-            });
-        });
-    </script>
     
 @endsection
