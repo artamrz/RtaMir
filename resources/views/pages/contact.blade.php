@@ -13,15 +13,15 @@
             <div class="col-md-6 p-5 mb-4 m-2 bg-dark text-light rounded-5">
                 <h1>Contact Me</h1>
                 <hr>
-                <form action="{{ url('contact.store') }}" method="POST" data-parsley-validate>
+                <form action="{{ route('contact.store') }}" method="POST" data-parsley-validate>
                     @csrf   
                   <div class="form-group">
                     <label name="email">Your email so I can get back to you:</label>
-                    <input id=email "type="email" name="email" class="form-control" required>
+                    <input id="email" type="email" name="email" class="form-control" required>
                   </div>
                   <div class="form-group">
                     <label name="subject">Great, What are we gonna talk about:</label>
-                    <input id="subject" type="subject" name="subject" class="form-control" require>
+                    <input id="subject" type="text" name="subject" class="form-control" required>
                   </div>
                    <div class="form-group">
                     <label name="message">Spill the tea: </label>
@@ -29,7 +29,8 @@
                   </div>
                   <div class="form-group mt-1">
                         <button type="submit" class="btn btn-orange mt-3 w-100">Done! Let's Talk!</button>
-                  </div>      
+                  </div> 
+                </form>       
             </div>
         </div>
         @endsection
