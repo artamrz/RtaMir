@@ -39,9 +39,11 @@ class PageController extends Controller
             'bodyMessage' => $request->message
         );
         Mail::send('emails.contact', $mail, function($message) use ($mail) {
-            $message->from($mail['email']);
+            $message->from('info@rtamir.com', 'Website Contact Form');
             $message->to('info@rtamir.com');
+            $message->replyTo($mail['email']);
             $message->subject($mail['subject']);
+            
         });
         Session::flash('success', 'We have received your email and will get back to you shortly.');
         return redirect('/');
