@@ -32,7 +32,8 @@ class PageController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'subject' => 'required|min:3|max:255',
-            'message' => 'required|min:10|max:1000'
+            'message' => 'required|min:10|max:1000',
+            'g-recaptcha-response' => 'required',
         ]);
         $mail = array(
             'email' => $request->email,
@@ -41,16 +42,16 @@ class PageController extends Controller
         );
 
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => env('RECAPTCHA_SECRET_KEY'),
-            'response' => $request->input('g-recaptcha-response'),
-            'remoteip' => $request->ip(),
-        ]);
-    
-        $recaptchaData = $response->json();
-    
-        if (!$recaptchaData['success']) {
-            return redirect()->back()->withErrors(['captcha' => 'reCAPTCHA verification failed.'])->withInput();
-        }
+        'secret' => env('RECAPTCHA_SECRET_KEY'),
+        'response' => $request->input('g-recaptcha-response'),
+        'remoteip' => $request->ip(),
+    ]);
+
+    $recaptchaData = $response->json();
+
+    if (!$recaptchaData['success']) {
+        return redirect()->back()->withErrors(['captcha' => 'reCAPTCHA verification failed.'])->withInput();
+    }
 
         Mail::send('emails.contact', $mail, function($message) use ($mail) {
             $message->from('info@rtamir.com', 'Website Contact Form');
