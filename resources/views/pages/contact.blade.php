@@ -17,16 +17,19 @@
                     @csrf   
                   <div class="form-group">
                     <label name="email">Your email so I can get back to you:</label>
-                    <input id="email" type="email" name="email" class="form-control" required>
+                    <input id="email" type="email" name="email" class="form-control mt-3" required>
                   </div>
                   <div class="form-group">
                     <label name="subject">Great, What are we gonna talk about:</label>
-                    <input id="subject" type="text" name="subject" class="form-control" required>
+                    <input id="subject" type="text" name="subject" class="form-control mt-3" required>
                   </div>
                    <div class="form-group">
                     <label name="message">Spill the tea: </label>
-                    <textarea id="message" type="message" name="message" class="form-control" placeholder="Type your message here ..." rows="4" required></textarea>
+                    <textarea id="message" type="message" name="message" class="form-control mt-3" placeholder="Type your message here ..." rows="4" required></textarea>
                   </div>
+                  <div class="form-group">
+                    <input type="hidden" name="recaptcha_token" id="recaptcha_token" class="form-control mt-3" required>
+                  </div>  
                   <div class="form-group mt-1">
                         <button type="submit" class="btn btn-orange mt-3 w-100">Done! Let's Talk!</button>
                   </div> 
@@ -39,5 +42,15 @@
 
     @section('scripts')
     <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            grecaptcha.ready(function () {
+                grecaptcha.execute("{{ env('RECAPTCHA_SITE_KEY') }}", { action: "contact" }).then(function (token) {
+                    document.getElementById("recaptcha_token").value = token;
+                });
+            });
+        });
+    </script>
     
 @endsection
