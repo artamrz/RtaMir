@@ -114,7 +114,10 @@ class PostController extends Controller
 
             $oldFilename = $post->image;
             $post->image = $filename;
-            Storage::delete($oldFilename);
+            
+            if (!empty($post->image) && Storage::exists('img/post_img/' . $post->image)) {
+                Storage::delete('img/post_img/' . $post->image);
+            }    
         }
         $post->save();
 
