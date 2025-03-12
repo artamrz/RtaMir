@@ -2,14 +2,15 @@
     @extends('main')
     @section('title','Contact')
     @section('content')
-       <div class="row bg-dark">
-            <div class="col-md-5 p-5 mb-4 m-2 rounded-5 offest-1">
-                <h1><span class="badge btn-purple w-100 mb-3">LET'S BUILD BRIDGES</span></h1>
-                <p class="fs-5">You can connect me by filling the form</p>
-                <p class="fs-5">I am also pretty active on Linkedin and other social platforms the links are below</p>
-                <p class="fs-5">Also if you are a developer, you can reach me on Github too.</p>
+       <div class="row bg-sandy text-dark">
+            <div class="col-md-5 p-5 m-2 rounded-5">
+                <h1><span class="btn-purple w-100 mb-3 px-5">LET'S BUILD BRIDGES</span></h1>
+                <p class="fs-5">You can connect me by filling the form or email me at <a href="" class=""><i class="fa-solid fa-envelope"></i></a></p>
+                <p class="fs-5">I am also pretty active on <a href="https://www.linkedin.com/in/artamir" class="text-dark"><i class="fa-brands fa-linkedin"></i></a> and other social platforms the links are below</p>
+                <p class="fs-5">Also if you are a developer, you can reach me on<a href="https://github.com/artamrz" class="text-dark"><i class="fab fa-github"></i> </a>too.</p>
+                
             </div>
-            <div class="col-md-6 p-5 mb-4 m-2 bg-light text-dark rounded-5">
+            <div class="col-md-6 p-5 mb-4 m-2 bg-dark text-light rounded-5">
                 <h1>Contact Me</h1>
                 <hr>
                   <div class="form-group">

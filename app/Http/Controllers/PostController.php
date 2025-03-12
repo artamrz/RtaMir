@@ -51,7 +51,7 @@ class PostController extends Controller
         if ($request->hasFile('image')){
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('img/post_img' . $filename);
+            $location = public_path('img/post_img/' . $filename);
             $imageManager = new ImageManager(new Driver());
             $processedImage = $imageManager->read($image)->cover(800, 400);
             $processedImage->save($location);
@@ -106,7 +106,7 @@ class PostController extends Controller
 
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('img/post_img' . $filename);
+            $location = public_path('img/post_img/' . $filename);
 
             $imageManager = new ImageManager(new Driver());
             $processedImage = $imageManager->read($image)->cover(800, 400);
