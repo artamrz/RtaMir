@@ -39,6 +39,6 @@
 
     @section('scripts')
     <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     
 @endsection
