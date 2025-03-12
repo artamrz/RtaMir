@@ -41,22 +41,6 @@ class PageController extends Controller
             'bodyMessage' => $request->message
         );
 
-        // ✅ Verify reCAPTCHA with Google API
-        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => env('RECAPTCHA_SECRET_KEY'),
-            'response' => $request->input('g-recaptcha-response'),
-            'remoteip' => $request->ip(),
-        ]);
-
-        $recaptchaData = $response->json();
-
-        // ✅ Check reCAPTCHA response
-        if (!$recaptchaData['success']) {
-            \Log::error('reCAPTCHA Failed', $recaptchaData); // 🔍 Debugging
-            return redirect()->back()->withErrors(['captcha' => 'reCAPTCHA verification failed.'])->withInput();
-        }
-
-
         Mail::send('emails.contact', $mail, function($message) use ($mail) {
             $message->from('info@rtamir.com', 'Website Contact Form');
             $message->to('info@rtamir.com');
