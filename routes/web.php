@@ -37,7 +37,8 @@ Route::get('/', [PageController::class,'getIndex']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class,'getAbout']);
 Route::get('/contact', [PageController::class,'getContact']);
-Route::post('/contact', [PageController::class,'postContact'])->('contact.store');
+Route::post('/contact', [PageController::class,'postContact'])->name('contact.store');
+
 Route::get('/webapp', [ServiceController::class,'getWebApp']);
 Route::get('/seo', [ServiceController::class,'getSeo']);
 Route::get('/content', [ServiceController::class,'getContent']);
