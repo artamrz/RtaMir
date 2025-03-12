@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-
+use Mail;
 
 class PageController extends Controller
 {
@@ -23,8 +23,28 @@ class PageController extends Controller
     }
 
     public function getContact() {
-         return view('pages.contact');
+        return view('pages.contact');
         
+    }
+    public function postContact(Request $request) {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'subject' => 'required|min:3|max:255',
+            'message' => 'required|min:10|max:1000'
+        ]);
+        $mail = array(
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'bodyMessage' => $request->message
+        );
+        Mail::send('emails.contact', $mail, function($message) use ($mail) {
+            $message->from($mail['email']);
+            $message->to('info@rtamir.com');
+            $message->subject($mail['subject']);
+        });
+        Session::flash('success', 'We have received your email and will get back to you shortly.');
+        return redirect('/');
+
     }
 }    
 
