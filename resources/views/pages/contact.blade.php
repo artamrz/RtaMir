@@ -28,7 +28,7 @@
                     <textarea id="message" type="message" name="message" class="form-control mt-3" placeholder="Type your message here ..." rows="4" required></textarea>
                   </div>
                   <div class="form-group">
-                  <div class="g-recaptcha mt-3" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div> 
+                    <div class="g-recaptcha mt-3" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div> 
                   </div>  
                   <div class="form-group mt-1">
                         <button type="submit" class="btn btn-orange mt-3 w-100">Done! Let's Talk!</button>
