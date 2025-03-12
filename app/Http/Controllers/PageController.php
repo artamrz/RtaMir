@@ -27,7 +27,7 @@ class PageController extends Controller
         
     }
     public function postContact(Request $request) {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'subject' => 'required|min:3|max:255',
             'message' => 'required|min:10|max:1000'
