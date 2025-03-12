@@ -42,7 +42,7 @@
                 <h6 class="text-light">How To Connect</h6>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2">
-                        <a href="#" class="nav-link text-decoration-none link-secondary p-0"><a href="https://www.linkedin.com/in/artamir" target="_blank" rel="noopener noreferrer" class="text-light mx-2"><i class="fa-brands fa-linkedin"></i></a>  <a href="https://github.com/artamrz" target="_blank" rel="noopener noreferrer" class="text-light mx-2"><i class="fab fa-github"></i> </a>  <a href="/contact" class="text-light mx-2"><i class="fa-solid fa-envelope"></i></a></a>
+                        <a href="#" class="nav-link text-decoration-none link-secondary p-0"><a href="https://www.linkedin.com/in/artamir" target="_blank" rel="noopener noreferrer" class="text-light mx-2"><i class="fa-brands fa-linkedin"></i></a>  <a href="https://github.com/artamrz" target="_blank" rel="noopener noreferrer" class="text-light mx-2"><i class="fab fa-github"></i></a>  <a href="/contact" class="text-light mx-2"><i class="fa-solid fa-envelope"></i></a></a>
                     </li>
                 </ul>
             </div>
