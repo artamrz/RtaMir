@@ -37,15 +37,22 @@
 </div>
  <div class="container-fluid spikes mt-5">
     <div class="row w-100 justify-content-center text-dark align-items-center">
-        <div class="p-5 mb-4 rounded-3">
-          <div class="container-fluid py-5">
+        <div class="container-fluid py-5">
               @foreach($posts as $post)
-                  <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
-                    <p class="col-md-8 fs-4">{{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
-                    <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-dark">Read More</a>
-                    <hr>
+                  <div class="row justify-content-center mx-5">
+                    <div class="col-md-7">
+                        <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
+                        <p class="fs-4">{{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
+                        <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-orange btn-large px-5">Read More</a>
+                    </div>
+                    <div class="col-md-5">
+                      @if($post->image)
+                      <img src="{{ url('img/post_img/' . $post->image) }}" class="img-fluid mx-auto d-block m-3 mx-auto d-block" alt="Post Image"/>
+                      @endif
+                      
+                    </div> 
+                  </div>  
                 @endforeach  
-          </div>
         </div>        
     </div>
       
