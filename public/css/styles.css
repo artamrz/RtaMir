@@ -60,6 +60,18 @@ html {
     border-color: #fb5f09 4px solid;
     color: #f9ecec;
 }
+.btn-modal-purple {
+    color: #f9ecec;
+    font-weight: 800;
+    background-color: #390d46;
+    border: #e2d1e8 1px solid;
+    transition: 0.8s;
+}
+.btn-modal-purple:hover {
+    background-color: #000000;
+    border: #390d46 1px solid;
+    color: #e0d6e3;
+}
 .border-3 {
     border: 3px solid;
 }
