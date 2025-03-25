@@ -25,7 +25,7 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className="text-dark">
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
@@ -105,13 +105,16 @@ export default function Register() {
                 <div className="mt-4 flex items-center justify-end">
                     <Link
                         href={route("login")}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="rounded-md text-sm text-gray-400 underline hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                        Already registered?????
+                        Already registered?
                     </Link>
 
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Register????
+                    <PrimaryButton
+                        className="ms-4 btn-orange"
+                        disabled={processing}
+                    >
+                        Register
                     </PrimaryButton>
                 </div>
             </form>
