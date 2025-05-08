@@ -100,7 +100,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->title = $request -> input('title');
         $post->slug = $request -> input('slug');
-        $post->body = Purifier::clean($request -> input('body'));
+        $post->body = Purifier::clean($request -> input('body'), 'youtube');
 
         if ($request->hasFile('image')){
 
