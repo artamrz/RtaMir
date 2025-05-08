@@ -52,14 +52,18 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             ClassicEditor
-                .create(document.querySelector('#ckeditor'))
+                .create(document.querySelector('#ckeditor'), {
+                    mediaEmbed: {
+                        previewsInData: true // <-- this makes it embed <iframe> not <oembed>
+                    }
+                })
                 .then(editor => {
-                    console.log("CKEditor initialized successfully.");
+                    console.log("CKEditor initialized with mediaEmbed iframe support.");
                 })
                 .catch(error => {
                     console.error("CKEditor initialization error:", error);
                 });
         });
     </script>
-    <script src="https://cdn.ckeditor.com/media-embed/oembed/1.0.0/oembed.js"></script>
+
 @endsection
