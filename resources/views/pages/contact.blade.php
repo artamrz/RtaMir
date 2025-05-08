@@ -1,8 +1,15 @@
 
     @extends('main')
     @section('title','Contact')
+    @section('stylesheets')
+    <style>
+        body {
+            background-color: #e7e4da;
+        }
+    </style>
+    @endsection
     @section('content')
-       <div class="row bg-sandy text-dark">
+       <div class="row bg-sandy text-dark shadow-lg rounded-3 my-5">
             <div class="col-md-5 p-5 m-2 rounded-5">
                 <h3 class="btn-purple w-100 d-block text-center mb-3 p-3 rounded-3">LET'S BUILD BRIDGES</h3>
                 <p class="fs-5">You can connect me by filling the form or email me at </p>
@@ -10,22 +17,22 @@
                 <p class="fs-5">Also if you are a developer, you can reach me on <a href="https://github.com/artamrz" class="text-dark"><i class="fab fa-github"></i></a> too.</p>
                 
             </div>
-            <div class="col-md-6 p-5 mb-4 m-2 bg-dark text-light rounded-5">
+            <div class="col-md-6 p-5 mb-4 m-2 bg-dark text-light rounded-3">
                 <h1 class="my-2">Contact Me</h1>
                 <hr>
                 <form action="{{ route('contact.store') }}" method="POST" data-parsley-validate>
                     @csrf   
-                  <div class="form-group">
+                  <div class="form-group my-3">
                     <label name="email">Your email so I can get back to you:</label>
-                    <input id="email" type="email" name="email" class="form-control mt-3" required>
+                    <input id="email" type="email" name="email" class="form-control mt-1" required>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group my-3">
                     <label name="subject">Great, What are we gonna talk about:</label>
-                    <input id="subject" type="text" name="subject" class="form-control my-3" required>
+                    <input id="subject" type="text" name="subject" class="form-control mt-1" required>
                   </div>
-                   <div class="form-group">
+                   <div class="form-group my-3">
                     <label name="message">Spill the tea: </label>
-                    <textarea id="message" type="message" name="message" class="form-control my-3" placeholder="Type your message here ..." rows="4" required></textarea>
+                    <textarea id="message" type="message" name="message" class="form-control mt-1" placeholder="Type your message here ..." rows="4" required></textarea>
                   </div> 
                   <div class="form-group mt-1">
                         <button type="submit" class="btn btn-orange my-3 w-100">Done! Let's Talk!</button>

@@ -5,7 +5,7 @@
 
  @section('content') 
 
- <div class="d-flex justify-content-center m-5">
+ <div class="d-flex justify-content-center m-5 text-sandy">
    <div class="row">
      <div class="col-md-4 ">
          <img src="{{ asset('img/RD.jpg')}}" class="mx-auto d-block rounded-circle border-3 m-3" width="140" height="140" alt=""/>

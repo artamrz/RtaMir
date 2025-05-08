@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Main navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-0" style="--bs-bg-opacity: .7;" aria-label="Main navbar">
     <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand" href="/">
