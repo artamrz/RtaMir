@@ -89,7 +89,6 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        dd('controller reached');
         $validate = $request -> validate ([
 
             'title' => 'required|max:255',
@@ -101,7 +100,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->title = $request -> input('title');
         $post->slug = $request -> input('slug');
-        $post->body = $request -> input('body');
+        $post->body = Purifier::clean($request -> input('body'), 'youtube');
 
         if ($request->hasFile('image')){
 
