@@ -1,11 +1,16 @@
 @extends('main')
-
 @section('title', 'Create A Post')
+@section('stylesheets')
+    <style>
+        body {
+            background-color: #e7e4da;
+        }
+    </style>
+    @endsection
 @section('content')
 
-    <<div class="bg-sandy p-4 rounded-3 text-dark">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 bg-dark text-sandy">
+            <div class="col-md-8 col-md-offset-2 bg-dark text-sandy rounded-3 m-5">
                 
                     <h1 class="display-5 fw-bold text-sandy">Create A New Post</h1>
                     <hr>
@@ -22,7 +27,7 @@
 
 
                                 <label for="body">Post Content</label>
-                                <textarea id="ckeditor" name="body" class="form-control text-dark" rows="5"></textarea><br>
+                                <textarea id="ckeditor" name="body" class="form-control text-dark" rows="10"></textarea><br>
 
                                 <div class="d-grid gap-2 mt-1">
                                 <button type="submit" class="btn btn-orange mb-5"> Create Post</button>
