@@ -50,20 +50,22 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            ClassicEditor
-                .create(document.querySelector('#ckeditor'), {
-                    mediaEmbed: {
-                        previewsInData: true // <-- this makes it embed <iframe> not <oembed>
-                    }
-                })
-                .then(editor => {
-                    console.log("CKEditor initialized with mediaEmbed iframe support.");
-                })
-                .catch(error => {
-                    console.error("CKEditor initialization error:", error);
-                });
-        });
+        let editor;
+
+        ClassicEditor
+            .create(document.querySelector('#ckeditor'), {
+                mediaEmbed: {
+                    previewsInData: true
+                }
+            })
+            .then(e => {
+                editor = e;
+                console.log('CKEditor initialized with previewsInData.');
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
+
 
 @endsection
