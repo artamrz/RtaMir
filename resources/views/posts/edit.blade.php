@@ -61,4 +61,5 @@
                 });
         });
     </script>
+    <script src="https://cdn.ckeditor.com/media-embed/oembed/1.0.0/oembed.js"></script>
 @endsection
