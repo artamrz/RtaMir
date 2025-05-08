@@ -66,7 +66,22 @@
 @endsection
 
 @section('scripts')
-	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-	<script src="https://cdn.ckeditor.com/media-embed/oembed/1.0.0/oembed.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        ClassicEditor
+            .create(document.querySelector('#ckeditor'), {
+                mediaEmbed: {
+                    previewsInData: true // Ensures <iframe> is saved instead of <oembed>
+                }
+            })
+            .then(editor => {
+                console.log('CKEditor initialized with iframe embeds:', editor);
+            })
+            .catch(error => {
+                console.error('CKEditor failed to initialize:', error);
+            });
+    });
+</script>
 	
 @endsection
