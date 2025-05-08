@@ -55,7 +55,6 @@
 		<!-- Post Content -->
 		<div class="col-lg-12 col-md-12 px-4 pb-5">
 			<h1 class="display-5 fw-bold px-4">{{ $post->title }}</h1>
-			<p class="fs-4 px-4">{{ substr(strip_tags($post->body), 0, 270) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
 			{!! $post->body !!}
 		</div>
 
