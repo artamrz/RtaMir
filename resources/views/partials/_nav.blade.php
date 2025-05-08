@@ -31,7 +31,7 @@
             </ul>
 
             <!-- Right-aligned authentication menu -->
-            <ul class="navbar-nav ms-auto">
+            <!--<ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn-orange px-4" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -60,7 +60,7 @@
                         <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
                 @endauth
-            </ul>
+            </ul> -->
         </div>
     </div>
 </nav>
