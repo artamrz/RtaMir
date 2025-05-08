@@ -89,6 +89,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        dd('controller reached');
         $validate = $request -> validate ([
 
             'title' => 'required|max:255',
