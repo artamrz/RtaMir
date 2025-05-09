@@ -7,7 +7,6 @@
 <div class="container bg-sandy p-4 rounded-3 text-dark">
 	<div class="row g-4">
 
-		
 		<div class="col-lg-7 col-md-8">
 			<img src="{{ asset('img/post_img/' . $post->image) }}" 
 				 class="img-fluid rounded" 
@@ -65,3 +64,16 @@
 	
 @endsection
 
+@section('scripts')
+	<script src="https://cdn.ckeditor.com/media-embed/oembed/1.0.0/oembed.js"></script>
+    <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#ckeditor'))
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+@endsection

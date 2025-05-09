@@ -3,7 +3,8 @@
 @section('title','Edit Post')   
 
 @section('content')
-    <div class="container-fluid col-md-12 text-dark">
+
+  <div class="container-fluid col-md-12 bg-sandy p-4 rounded-3 p-4 text-dark">
         <div class="row">
             <h1 class="display-5 fw-bold">Edit Your Post</h1>
             <hr>
@@ -46,8 +47,16 @@
 @endsection
 @section('scripts')
     <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
-    
+    <script src="https://cdn.ckeditor.com/media-embed/oembed/1.0.0/oembed.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#ckeditor'))
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
 
     <script>
         let editor;
