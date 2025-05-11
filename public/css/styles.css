@@ -144,7 +144,35 @@ html {
     inset: 0;
     transform: skewY(var(--skew-angle-8));
 }
+.collapse-section {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    transition: max-height 0.5s ease;
+}
 
+.collapse-section.open {
+    max-height: 500px; /* adjust if needed */
+}
+.video-wrapper {
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper iframe {
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.video-wrapper:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
 .spikes {
     --spike-width: 50px;
     --spike-height: 40px;

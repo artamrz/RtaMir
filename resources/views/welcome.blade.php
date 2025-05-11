@@ -24,16 +24,28 @@
      </div>
    </div>
  </div>
-<div class="container-fluid py-4 angled-background-orange-5 d-flex py-3 justify-content-center">
-    <div class="row w-100 justify-content-center align-items-center">
-        <!-- Left Column: Text Content -->
-        <div class="col-12 col-sm-4 text-center mb-3 mb-sm-0">
-            <h3>No Need To Subscribe</h3>
-            <p>Newsletters are outdated. Let's engage in more interactive ways.</p>
-            <a href="/contact" class="btn btn-purple" style="width: 100%;">I Want To Know More</a>
-        </div>
-    </div>
-</div>
+  <div id="collapse-down" class="container-fluid py-4 angled-background-orange-5 d-flex py-3 justify-content-center">
+      <div class="row w-100 justify-content-center align-items-center">
+          <div class="col-12 col-sm-4 text-center mb-3 mb-sm-0">
+              <h3>Before Subscribing</h3>
+              <p>Do you think Newsletters are outdated? Let's engage in more interactive ways.</p>
+              <a id="toggleBtn" class="btn btn-purple mb-3" style="width: 100%;">I Want To Know More ▼</a>
+              <hr>
+          </div>
+        
+        <div id="moreContent" class="collapse-section">
+          <div class="row align-items-center mb-4">
+                <div class="col-lg-4 col-md-5 offset-md-1">
+                  <p class="fw-bold">
+                  In this video,<span class="badge bg-dark"> Brett Malinowski </span> breaks down how launching a newsletter can be a simple yet powerful online business with high income potential. By choosing a niche you're familiar with and delivering valuable content weekly, you can grow a loyal audience. Once your readership builds, you can monetize through sponsorships, use effective hooks to increase return visits, and leverage lead magnets to drive growth. It's a clear path to steady, consistent income over time.
+                </div>
+                <div class="col-lg-5 col-md-6  offset-md-1 video-wrapper mb-4">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSLuP0PoYuM?si=pzP9r9s31TFJ_9ZS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> 
+            </div>    
+         </div>          
+      </div> 
+  </div>
 </div>
  <div class="container-fluid spikes mt-5">
     <div class="row w-100 justify-content-center text-dark align-items-center">
@@ -57,6 +69,40 @@
     </div>
       
 </div>
+@endsection
+
+@section('scripts') 
+<script>
+  const btn = document.getElementById("toggleBtn");
+  const content = document.getElementById("moreContent");
+
+  btn.addEventListener("click", () => {
+    const isExpanded = content.classList.contains("show");
+
+    if (isExpanded) {
+      // Collapse
+      content.style.maxHeight = content.scrollHeight + "px"; // Set height first for transition
+      requestAnimationFrame(() => {
+        content.style.maxHeight = "0px";
+      });
+      content.classList.remove("show");
+      btn.textContent = "I Want To Know More ▼";
+    } else {
+      // Expand
+      content.classList.add("show");
+      content.style.maxHeight = content.scrollHeight + "px";
+      btn.textContent = "Show Less ▲";
+    }
+  });
+
+  // Optional: reset maxHeight after transition to allow reflow if content changes
+  content.addEventListener("transitionend", () => {
+    if (content.classList.contains("show")) {
+      content.style.maxHeight = "none";
+    }
+  });
+</script>
+
 @endsection
 
         
