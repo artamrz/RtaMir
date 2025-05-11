@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-0" style="--bs-bg-opacity: .7;" aria-label="Main navbar">
-    <div class="container-fluid">
+    <div class="container px-4">
         <!-- Logo -->
         <a class="navbar-brand" href="/">
             <img src="{{ asset('img/rtamir-logo-white.png') }}" alt="RtaMir Logo" width="120" height="70">
@@ -13,26 +13,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <!-- Left-aligned navigation menu -->
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('rlog') ? 'active' : '' }}" href="/rlog">Rlog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About RtaMir</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Get In-touch</a>
-                </li>
+               
             </ul>
 
             <!-- Right-aligned authentication menu -->
-            <!--<ul class="navbar-nav ms-auto">
-                @auth
+            <ul class="navbar-nav ms-auto">
+                <!--<li class="nav-item">
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+                </li>-->
+                <li class="nav-item fw-bold">
+                    <a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link {{ Request::is('rlog') ? 'active' : '' }}" href="/rlog">Rlog</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About RtaMir</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Get In-touch</a>
+                </li>
+                <!--@auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn-orange px-4" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
@@ -59,8 +60,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
-                @endauth
-            </ul> -->
+                @endauth-->
+            </ul>
         </div>
     </div>
 </nav>
