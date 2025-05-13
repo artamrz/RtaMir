@@ -49,7 +49,7 @@
  <div class="container-fluid d-flex spikes mt-5">
    
         <div class="scroll-container d-flex overflow-auto py-5 px-2 gap-3">
-            <div class="container-fluid py-5">
+            <div class="container-fluid d-flex py-5">
             @foreach($posts as $post)    
                 <div class="item-card card-holder rounded-3 bg-dark text-light mx-3">
                       @if($post->image)
