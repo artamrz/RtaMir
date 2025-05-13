@@ -53,7 +53,7 @@
         </style>
     @endsection
     @section('content')
-    <section class="hero-video-wrapper">
+    <section class="hero-video-wrapper px-0">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="video/CodingUniverse-HomePageVideo.mp4" type="video/mp4">
             <source src="video/CodingUniverse-HomePageVideo.webm" type="video/webm">

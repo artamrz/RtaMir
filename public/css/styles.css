@@ -36,7 +36,6 @@ html {
     overflow: hidden; */
     position: relative;
     height: 80vh;
-    min-height: 80vh;
     overflow: hidden;
 }
 
