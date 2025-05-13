@@ -1,57 +1,6 @@
  @extends('wlc-main')
 
  @section('title','Home')
- @section('stylesheets')
-    <style>
-        .hero-video-wrapper {
-            position: relative;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4); /* Optional dark layer */
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-content {
-            z-index: 2;
-            color: #fff;
-            padding: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-}
-
-        </style>
-    @endsection
 
  @section('content')
  <section class="next-section py-5"> 
@@ -101,7 +50,8 @@
    
         <div class="scroll-container d-flex overflow-auto py-5 px-2 gap-3">
             <div class="container-fluid d-flex py-5">
-            @foreach($posts as $post)    
+            @foreach($posts as $post)  
+              <a href="{{url('rlog/'.$post->slug)}}" class="card-link-wrapper">      
                 <div class="item-card card-holder rounded-3 bg-dark text-light mx-3">
                       @if($post->image)
                       <a href="{{url('rlog/'.$post->slug)}}"><img src="{{ url('img/post_img/' . $post->image) }}" class="post-img" alt="Post Title"/></a>
@@ -119,6 +69,7 @@
                             </footer>
                       </div>
                 </div>
+              </a>  
             @endforeach  
             </div>      
         </div>    

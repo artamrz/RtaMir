@@ -65,7 +65,7 @@ html {
     color: #fff;
     padding: 2rem;
     padding-top: 5rem !important;
-    margin-top:5rem;
+    margin-top: 5rem;
 }
 
 @media (max-width: 768px) {
@@ -76,6 +76,7 @@ html {
     .hero-content p {
         font-size: 1rem;
     }
+}
 .dropdown .btn-orange {
     color: #f9ecec;
     padding-left: 0.3rem;
@@ -228,9 +229,19 @@ html {
 /* posts cards */
 
 @media (max-width: 768px) {
+    .card-holder main,
+    .card-holder footer,
+    .card-holder footer img,
+    .card-holder .card-caption::before {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
     .card-holder {
         width: 80vw; /* responsive width on small screens */
     }
+}
+.card-link-wrapper {
+    display: block;
 }
 .card-holder {
     position: relative;
