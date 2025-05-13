@@ -1,7 +1,7 @@
 
 <!-- Video Section -->
  <div class="container-fluid homepage-video py-5">
-    <video autoplay muted loop>
+    <video autoplay muted loop playsinline>
         <source src="video/CodingUniverse-HomePageVideo.mp4" type="video/mp4">
         <source src="video/CodingUniverse-HomePageVideo.webm" type="video/webm">
         Your browser does not support the video tag.  
