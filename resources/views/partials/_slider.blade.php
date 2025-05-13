@@ -1,7 +1,7 @@
 
 <!-- Video Section -->
 <section class="homepage-video">
-  <video autoplay muted loop playsinline class="bg-video">
+  <!-- <video autoplay muted loop playsinline class="bg-video">
     <source src="video/CodingUniverse-HomePageVideo.mp4" type="video/mp4">
     <source src="video/CodingUniverse-HomePageVideo.webm" type="video/webm">
     Your browser does not support the video tag.
@@ -12,6 +12,19 @@
       <h1 class="display-5 fw-bold mt-5">This is Your Gateway</h1>
       <p class="fs-4 pb-5">of joining the world of coding and technology. Let's dive deep...</p>
     </div>
-  </div>  
+  </div>   -->
+  <section class="hero-video-wrapper">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video/CodingUniverse-HomePageVideo.mp4" type="video/mp4">
+            <source src="video/CodingUniverse-HomePageVideo.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay">
+            <div class="hero-content">
+            <h1>Welcome to My Website</h1>
+            <p>Engaging tagline goes here</p>
+            </div>
+        </div>
+    </section>
 </section>
 <!-- End of Video Section -->
