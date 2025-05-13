@@ -306,6 +306,12 @@ html {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
 }
+.item-card {
+    flex: 0 0 auto; /* don't shrink, stay fixed width */
+    width: 600px;
+    height: 300px;
+    scroll-snap-align: start;
+}
 .scroll-container {
     margin-left: 1rem;
     margin-bottom: 1rem;
