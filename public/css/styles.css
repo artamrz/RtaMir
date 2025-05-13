@@ -13,6 +13,7 @@ body {
 
 :root {
     --body-bg: #212529;
+    --def-transition-duration: 0.3s;
 }
 
 footer {
@@ -204,6 +205,117 @@ html {
     transform: scale(1.03);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
+/* posts cards */
+
+@media (max-width: 768px) {
+    .card-holder {
+        width: 80vw; /* responsive width on small screens */
+    }
+}
+.card-holder {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+.card-holder .post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-holder .post-img {
+    transform: scale(1.2);
+    transition-property: transform;
+}
+.card-holder:hover .post-img {
+    transform: scale(1);
+}
+.card-caption {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2rem;
+    z-index: 1;
+}
+.card-holder main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    transform: translate3d(0, -6rem, 0);
+    transition-property: opacity, transform;
+}
+.card-holder p {
+    margin: 0;
+}
+.card-holder footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    transform: translate3d(0, 6rem, 0);
+    transition-property: opacity, transform;
+}
+.card-holder:hover main,
+.card-holder:hover footer {
+    transform: translate3d(0, 0, 0);
+}
+.card-holder footer img {
+    width: auto;
+    transform: translate3d(-3rem, 0, 0) rotate(360deg);
+    transition-property: transform, opacity;
+    transition-delay: var(--def-transition-duration);
+    opacity: 0;
+}
+.card-holder:hover footer img {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+}
+.card-holder main,
+.card-holder footer {
+    opacity: 0;
+}
+.card-caption::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(21, 22, 24, 0.24) 0%,
+        #151618 100%
+    );
+    z-index: -1;
+    opacity: 0;
+    transition-property: opacity;
+}
+.card-holder:hover main,
+.card-holder:hover footer,
+.card-holder:hover .card-caption::before {
+    opacity: 1;
+}
+
+.card-caption::before,
+.card-holder .post-img,
+.card-holder main,
+.card-holder footer,
+.card-holder footer img {
+    transition-duration: var(--def-transition-duration);
+    transition-timing-function: ease-in-out;
+}
+.scroll-container {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* smooth on iOS */
+}
+
+/*Spikes of Footer*/
+
 .spikes {
     --spike-width: 50px;
     --spike-height: 40px;

@@ -47,25 +47,31 @@
   </div>
 </div>
  <div class="container-fluid spikes mt-5">
-    <div class="row w-100 justify-content-center text-dark align-items-center">
-        <div class="container-fluid py-5">
-              @foreach($posts as $post)
-                  <div class="row justify-content-center mx-5">
-                    <div class="col-md-7">
-                        <h1 class="display-5 fw-bold">{{ $post->title }}</h1>
-                        <p class="fs-4">{{ substr(strip_tags($post->body),0,270) }}{{strlen(strip_tags($post->body)) >300 ? "..." : ""}}</p>
-                        <a href="{{url('rlog/'.$post->slug)}}" class="btn btn-orange btn-large px-5">Read More</a>
-                    </div>
-                    <div class="col-md-5">
+   
+        <div class="scroll-container container-fluid d-flex overflow-auto py-5 px-2 gap-3">
+            <div class="container-fluid py-5">
+            @foreach($posts as $post)    
+                <div class="item-card card-holder rounded-3 bg-dark text-light">
                       @if($post->image)
-                      <img src="{{ url('img/post_img/' . $post->image) }}" class="img-fluid mx-auto d-block m-3 mx-auto d-block" alt="Post Image"/>
+                      <a href="{{url('rlog/'.$post->slug)}}"><img src="{{ url('img/post_img/' . $post->image) }}" class="post-img" alt="Post Title"/></a>
                       @endif
-                      
-                    </div> 
-                  </div>  
-                @endforeach  
-        </div>        
-    </div>
+                      <div class="card-body card-caption">
+                            <main>
+                                <h2 class="">{{ $post->title }}</h2>
+                                <p class="">{{ substr(strip_tags($post->body),0,100) }}{{strlen(strip_tags($post->body)) >70 ? "..." : ""}}</p>
+                            </main>
+                            <footer>
+                                <div>
+                                    <p class="fst-italic"> {{ date('M j Y', strtotime($post->created_at)) }}</p>
+                                </div>
+                                <a href="{{url('rlog/'.$post->slug)}}"><img src="img/right-arrow-orange.png" class="" width="30" height="30" alt="Read The Post"/></a>
+                            </footer>
+                      </div>
+                </div>
+            @endforeach  
+            </div>      
+        </div>    
+  </div>
       
 </div>
 @endsection
