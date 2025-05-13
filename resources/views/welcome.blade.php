@@ -3,7 +3,8 @@
  @section('title','Home')
 
 
- @section('content') 
+ @section('content')
+ <section class="next-section py-5"> 
  <div class="d-flex justify-content-center m-5 text-sandy">
    <div class="row">
      <div class="col-md-4 ">
@@ -74,6 +75,7 @@
   </div>
       
 </div>
+</section>
 @endsection
 
 @section('scripts') 

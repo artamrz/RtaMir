@@ -31,8 +31,10 @@ html {
 /*homepage Video*/
 .homepage-video {
     position: relative;
-    height: 100vh;
-    /*overflow: hidden;*/
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 60vh !important;
 }
 .homepage-video::before {
     content: "";
@@ -48,6 +50,7 @@ html {
     height: 100%;
     object-fit: cover;
     z-index: -2;
+    pointer-events: none;
 }
 .video-content {
     position: relative;
@@ -64,6 +67,9 @@ html {
     .homepage-video {
         height: 75vh;
     }
+}
+.next-section {
+    padding-top: 3rem;
 }
 .dropdown .btn-orange {
     color: #f9ecec;
