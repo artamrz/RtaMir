@@ -23,8 +23,8 @@
         </video>
         <div class="hero-overlay">
             <div class="hero-content">
-            <h1>Welcome to My Website</h1>
-            <p>Engaging tagline goes here</p>
+            <h1>This is Your Gateway</h1>
+            <p>of joining the world of coding and technology. Let's dive deep.</p>
             </div>
         </div>
     </section>
