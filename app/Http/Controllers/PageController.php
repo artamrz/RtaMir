@@ -28,6 +28,10 @@ class PageController extends Controller
         return view('pages.contact');
         
     }
+    public function getTest() {
+        return view('pages.test');
+        
+    }
     public function postContact(Request $request) {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',

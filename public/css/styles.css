@@ -34,15 +34,14 @@ html {
     min-height: 80vh;
     width: 100%;
     overflow: hidden;
-    background: black;
 }
 
 .bg-video {
-    /*position: absolute;*/
-    /*top: 0;
-    left: 0;*/
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
@@ -50,10 +49,11 @@ html {
 }
 
 .video-content {
-    margin-top: 5rem;
     position: relative;
     z-index: 1;
-    padding-top: 25vh 10vw 0 10vw;
+    padding-top: 25vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
     text-align: center;
     color: white;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
@@ -72,15 +72,8 @@ html {
         margin: 0;
     }
 
-    /*.homepage-video {
-        height: 75vh;
-    }*/
     .homepage-video {
-        height: 100svh; /* safe viewport on mobile */
-    }
-
-    .bg-video {
-        height: 100svh;
+        height: 75vh;
     }
 }
 .next-section {

@@ -38,6 +38,7 @@ Route::middleware(['auth', 'verified', Role::class])->group(function () {
 // Pages
 Route::get('/', [PageController::class,'getIndex']);
 Route::get('/about', [PageController::class,'getAbout']);
+Route::get('/test', [PageController::class,'getTest']);
 Route::get('/contact', [PageController::class,'getContact']);
 Route::post('/contact', [PageController::class, 'postContact'])->name('contact.store');
 // Services
