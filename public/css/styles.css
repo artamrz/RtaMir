@@ -29,13 +29,26 @@ html {
     box-shadow: none !important;
 }
 /*homepage Video*/
-.hero-video-wrapper {
+.homepage-video {
+    /* position: relative;
+    min-height: 80vh;
+    width: 100%;
+    overflow: hidden; */
     position: relative;
     height: 80vh;
     overflow: hidden;
 }
 
-.hero-video {
+.bg-video {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    display: block; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -48,7 +61,6 @@ html {
     object-fit: cover;
     pointer-events: none;
 }
-
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -59,13 +71,25 @@ html {
     justify-content: center;
     text-align: center;
 }
-
-.hero-content {
+.video-content {
+    /* position: relative;
+    z-index: 1;
+    padding-top: 25vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); */
     z-index: 2;
     color: #fff;
     padding: 2rem;
-    /* padding-top: 5rem !important;
-    margin-top: 5rem; */
+}
+.homepage-video::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(29, 33, 36, 0.5);
+    z-index: 0;
 }
 
 @media (max-width: 768px) {
@@ -76,6 +100,17 @@ html {
     .hero-content p {
         font-size: 1rem;
     }
+    /* .video-content {
+        padding: 3rem 1rem;
+        margin: 0;
+    }
+
+    .homepage-video {
+        height: 75vh;
+    } */
+}
+.next-section {
+    padding-top: 3rem;
 }
 .dropdown .btn-orange {
     color: #f9ecec;
@@ -229,19 +264,9 @@ html {
 /* posts cards */
 
 @media (max-width: 768px) {
-    .card-holder main,
-    .card-holder footer,
-    .card-holder footer img,
-    .card-holder .card-caption::before {
-        opacity: 1 !important;
-        transform: translate3d(0, 0, 0) !important;
-    }
     .card-holder {
         width: 80vw; /* responsive width on small screens */
     }
-}
-.card-link-wrapper {
-    display: block;
 }
 .card-holder {
     position: relative;
