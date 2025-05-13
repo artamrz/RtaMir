@@ -48,7 +48,7 @@
 </div>
  <div class="container-fluid spikes mt-5">
    
-        <div class="scroll-container container-fluid d-flex overflow-auto py-5 px-2 gap-3">
+        <div class="scroll-container d-flex overflow-auto py-5 px-2 gap-3">
             <div class="container-fluid py-5">
             @foreach($posts as $post)    
                 <div class="item-card card-holder rounded-3 bg-dark text-light">
