@@ -31,8 +31,8 @@ html {
 /*homepage Video*/
 .homepage-video {
     position: relative;
-    min-height: min-content;
-    overflow: hidden;
+    height: 100vh;
+    /*overflow: hidden;*/
 }
 .homepage-video::before {
     content: "";
@@ -45,8 +45,7 @@ html {
     position: absolute;
     inset: 0;
     width: 100%;
-    max-width: 100vw;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     z-index: -2;
 }
@@ -54,8 +53,17 @@ html {
     position: relative;
     z-index: 1;
     color: white;
-    padding: 5rem;
-    margin: 5rem;
+    padding: 5rem 2rem;
+}
+@media (max-width: 768px) {
+    .video-content {
+        padding: 3rem 1rem;
+        margin: 0;
+    }
+
+    .homepage-video {
+        height: 75vh;
+    }
 }
 .dropdown .btn-orange {
     color: #f9ecec;
