@@ -64,6 +64,8 @@ html {
     z-index: 2;
     color: #fff;
     padding: 2rem;
+    padding-top: 5rem !important;
+    margin-top: 5rem;
 }
 
 @media (max-width: 768px) {
